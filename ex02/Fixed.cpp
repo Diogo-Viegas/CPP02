@@ -59,21 +59,21 @@ bool Fixed::operator>=(Fixed const &comp)
     return (this->_number >= comp._number);
 }
 
-float Fixed::operator+(Fixed const &obj)
+Fixed Fixed::operator+(Fixed const &obj) const
 {
-    return (this->toFloat() + obj.toFloat());
+    return (Fixed(this->toFloat() + obj.toFloat()));
 }
-float Fixed::operator-(Fixed const &obj)
+Fixed Fixed::operator-(Fixed const &obj) const
 {
-    return (this->toFloat() - obj.toFloat());
+    return (Fixed(this->toFloat() - obj.toFloat()));
 }
-float Fixed::operator*(Fixed const &obj)
+Fixed Fixed::operator*(Fixed const &obj) const
 {
-    return (this->toFloat() * obj.toFloat());
+    return (Fixed(this->toFloat() * obj.toFloat()));
 }
-float Fixed::operator/(Fixed const &obj)
+Fixed Fixed::operator/(Fixed const &obj) const
 {
-    return (this->toFloat() / obj.toFloat());
+    return (Fixed(this->toFloat() / obj.toFloat()));
 }
 float Fixed::toFloat(void) const
 {
@@ -89,9 +89,9 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 {
     if(a.toFloat() < b.toFloat())
-        return (b);
-    else
         return (a);
+    else
+        return (b);
 }
 Fixed& Fixed::max( Fixed &a,  Fixed &b)
 {
@@ -107,12 +107,12 @@ Fixed& Fixed::max( Fixed &a,  Fixed &b)
     else
         return (a);
 }
-Fixed Fixed::operator++()
+Fixed& Fixed::operator++()
 {
     _number++;
     return(*this);
 }
-Fixed Fixed::operator--()
+Fixed& Fixed::operator--()
 {
     _number--;
     return (*this);
@@ -129,6 +129,8 @@ Fixed Fixed::operator--(int)
     --this->_number;
     return (tmp);
 }
+
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;

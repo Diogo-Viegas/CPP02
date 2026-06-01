@@ -21,21 +21,22 @@ class Fixed
         bool operator==(const Fixed& comp);
         bool operator!=(const Fixed& comp);
         //4 arithmetic operators
-        float operator+(Fixed const &obj);
-        float operator-(Fixed const &obj);
-        float operator*(Fixed const &obj);
-        float operator/(Fixed const &obj);
-        float toFloat(void) const;
+        Fixed operator+(Fixed const &obj) const;
+        Fixed operator-(Fixed const &obj) const;
+        Fixed operator*(Fixed const &obj) const;
+        Fixed operator/(Fixed const &obj) const;
         //static functions
         static Fixed &min(Fixed &a, Fixed &b);
         static Fixed &max(Fixed &a, Fixed &b);
         static const Fixed &min(const Fixed &a,const Fixed &b);
         static const Fixed &max(const Fixed &a, const Fixed &b);
         //increment and decrement
-        Fixed operator++();
-        Fixed operator--();
+        Fixed& operator++();
+        Fixed& operator--();
         Fixed operator++(int);
         Fixed operator--(int);
+        //conversion
+        float toFloat(void) const;
         //destructor
         ~Fixed();
 };

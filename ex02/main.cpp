@@ -36,7 +36,7 @@ int main( void ) {
     else
         std::cout << "false" << std::endl;
     std::cout << "SUM" << std::endl;
-    float result = a + b;
+    Fixed result = a + b;
     std::cout << a << " + " << b << " = " << result << std::endl; 
     std::cout << "SUBTRACT" << std::endl;
     result = a - b;

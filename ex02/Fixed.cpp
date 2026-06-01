@@ -58,10 +58,28 @@ bool Fixed::operator>=(Fixed const &comp)
 {
     return (this->_number >= comp._number);
 }
+
+float Fixed::operator+(Fixed const &obj)
+{
+    return (this->toFloat() + obj.toFloat());
+}
+float Fixed::operator-(Fixed const &obj)
+{
+    return (this->toFloat() - obj.toFloat());
+}
+float Fixed::operator*(Fixed const &obj)
+{
+    return (this->toFloat() * obj.toFloat());
+}
+float Fixed::operator/(Fixed const &obj)
+{
+    return (this->toFloat() / obj.toFloat());
+}
 float Fixed::toFloat(void) const
 {
     return (float)_number / (float)(1 << _bits);
 }
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;

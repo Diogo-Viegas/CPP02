@@ -1,8 +1,8 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-    Fixed a(52);
-    Fixed b(52);
+    Fixed a(42.42f);
+    Fixed b(42.43f);
     //Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
     std::cout << a << std::endl;
@@ -36,5 +36,17 @@ int main( void ) {
         std::cout << "true" << std::endl;
     else
         std::cout << "false" << std::endl;
+    std::cout << "SUM" << std::endl;
+    float result = a + b;
+    std::cout << a << " + " << b << " = " << result << std::endl; 
+    std::cout << "SUBTRACT" << std::endl;
+    result = a - b;
+    std::cout << a << " - " << b << " = " << result << std::endl; 
+    std::cout << "MULT" << std::endl;
+    result = a * b;
+    std::cout << a << " * " << b << " = " << result << std::endl; 
+    std::cout << "DIVISION" << std::endl;
+    result = a / b;
+    std::cout << a << " / " << b << " = " << result << std::endl; 
     return 0;
 }

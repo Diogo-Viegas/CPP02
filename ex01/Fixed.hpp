@@ -1,15 +1,15 @@
 #ifndef FIXED_H
 #define FIXED_H
-
+#include <iostream>
 class Fixed
 {
     private:
-        const int _number;
+        int _number;
         static const int _bits = 8;
     public:
         Fixed();
-        Fixed(const int intNbr);
-        Fixed(const float floatNbr);
+        Fixed(const int number);
+        Fixed(const float number);
         Fixed(const Fixed& copy);
         Fixed& operator=(const Fixed& copy);
         int toInt(void) const;
@@ -18,5 +18,5 @@ class Fixed
         ~Fixed();
     
 };
-
+        std::ostream	&operator<<(std::ostream &o, Fixed const &fixed);
 #endif

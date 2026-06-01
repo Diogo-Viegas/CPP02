@@ -26,6 +26,15 @@ class Fixed
         float operator*(Fixed const &obj);
         float operator/(Fixed const &obj);
         float toFloat(void) const;
+        //static functions
+        Fixed &min(Fixed &a, Fixed &b);
+        Fixed &max(Fixed &a, Fixed &b);
+        const Fixed &min(const Fixed &a,const Fixed &b);
+        const Fixed &max(const Fixed &a, const Fixed &b);
+        //increment and decrement
+        Fixed operator++();
+        Fixed operator--();
+        //destructor
         ~Fixed();
 };
 std::ostream& operator<<(std::ostream &o,Fixed const &fixed);

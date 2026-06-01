@@ -79,7 +79,44 @@ float Fixed::toFloat(void) const
 {
     return (float)_number / (float)(1 << _bits);
 }
-
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
+{
+    if(a.toFloat() > b.toFloat())
+        return (a);
+    else
+        return (b);
+}
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
+{
+    if(a.toFloat() < b.toFloat())
+        return (b);
+    else
+        return (a);
+}
+Fixed& Fixed::max( Fixed &a,  Fixed &b)
+{
+    if(a.toFloat() > b.toFloat())
+        return (a);
+    else
+        return (b);
+}
+ Fixed& Fixed::min( Fixed &a,  Fixed &b)
+{
+    if(a.toFloat() < b.toFloat())
+        return (b);
+    else
+        return (a);
+}
+Fixed Fixed::operator++()
+{
+    _number++;
+    return(*this);
+}
+Fixed Fixed::operator--()
+{
+    _number--;
+    return (*this);
+}
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;

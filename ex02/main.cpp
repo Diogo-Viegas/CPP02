@@ -13,7 +13,7 @@ int main( void ) {
     //std::cout << b << std::endl;
     //std::cout << Fixed::max( a, b ) << std::endl;
 
-    //main from subject ↑
+    std::cout << "main from subject ↑" << std::endl;
 
     if(a < b)
         std::cout << "true" << std::endl;

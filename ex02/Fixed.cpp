@@ -117,6 +117,18 @@ Fixed Fixed::operator--()
     _number--;
     return (*this);
 }
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp = *this;
+    ++this->_number;
+    return (tmp);
+}
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp = *this;
+    --this->_number;
+    return (tmp);
+}
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;

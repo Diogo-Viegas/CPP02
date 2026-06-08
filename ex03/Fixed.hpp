@@ -37,6 +37,9 @@ class Fixed
         Fixed operator--(int);
         //conversion
         float toFloat(void) const;
+        //getters and setters
+        void setRawBits(int const raw);
+        int getRawBits(void) const;
         //destructor
         ~Fixed();
 };

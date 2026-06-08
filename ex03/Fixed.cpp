@@ -129,7 +129,17 @@ Fixed Fixed::operator--(int)
     --this->_number;
     return (tmp);
 }
+int Fixed::getRawBits(void) const
+{
+    std::cout << "getRawBits member function called" << std::endl;
+    return _number;
+}
 
+void Fixed::setRawBits(int const raw)
+{
+    std::cout << "setRawBits member function called" << std::endl;
+    _number = raw;
+}
 
 Fixed::~Fixed()
 {

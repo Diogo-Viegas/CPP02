@@ -4,21 +4,21 @@
 
 Fixed::Fixed(): _number(0)
 {
-     //std::cout << "Default constructor called" << std::endl;
+     std::cout << "Default constructor called" << std::endl;
 }
 Fixed::Fixed(const int intNumber)
 {
-    //std::cout << "Int constructor called" << std::endl;
+    std::cout << "Int constructor called" << std::endl;
     _number = intNumber << _bits;
 }
 Fixed::Fixed(const float floatNumber)
 {
-     //std::cout << "Float constructor called" << std::endl;
+     std::cout << "Float constructor called" << std::endl;
     _number = roundf(floatNumber * (1 << _bits));
 }
 Fixed::Fixed(const Fixed& copy)
 {
-     //std::cout << "Copy constructor called" << std::endl;
+     std::cout << "Copy constructor called" << std::endl;
      *this = copy;
 }
 Fixed& Fixed::operator=(const Fixed& copy)
@@ -143,5 +143,5 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::~Fixed()
 {
-   // std::cout << "Destructor called" << std::endl;
+   std::cout << "Destructor called" << std::endl;
 }

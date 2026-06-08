@@ -2,8 +2,8 @@
 
 Fixed::Fixed()
 {
-    _number = 0;
     std::cout << "Default constructor called" << std::endl;
+    _number = 0;
 }
 
 Fixed::Fixed(const Fixed &obj)

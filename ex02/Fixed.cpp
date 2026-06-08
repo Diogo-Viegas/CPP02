@@ -34,27 +34,27 @@ std::ostream& operator<<(std::ostream &o,Fixed const &fixed)
     o << fixed.toFloat();
     return o;
 }
-bool Fixed::operator<(Fixed const &comp)
+bool Fixed::operator<(Fixed const &comp) const
 {
     return (this->_number < comp._number);
 }
-bool Fixed::operator>(Fixed const &comp)
+bool Fixed::operator>(Fixed const &comp) const
 {
     return (this->_number > comp._number);
 }
-bool Fixed::operator==(Fixed const &comp)
+bool Fixed::operator==(Fixed const &comp) const
 {
     return (this->_number == comp._number);
 }
-bool Fixed::operator!=(Fixed const &comp)
+bool Fixed::operator!=(Fixed const &comp) const
 {
     return (this->_number != comp._number);
 }
-bool Fixed::operator<=(Fixed const &comp)
+bool Fixed::operator<=(Fixed const &comp) const
 {
     return (this->_number <= comp._number);
 }
-bool Fixed::operator>=(Fixed const &comp)
+bool Fixed::operator>=(Fixed const &comp) const
 {
     return (this->_number >= comp._number);
 }
@@ -129,7 +129,17 @@ Fixed Fixed::operator--(int)
     --this->_number;
     return (tmp);
 }
+int Fixed::getRawBits(void) const
+{
+    std::cout << "getRawBits member function called" << std::endl;
+    return _number;
+}
 
+void Fixed::setRawBits(int const raw)
+{
+    std::cout << "setRawBits member function called" << std::endl;
+    _number = raw;
+}
 
 Fixed::~Fixed()
 {

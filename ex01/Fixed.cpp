@@ -42,6 +42,19 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &fixed)
     o << fixed.toFloat();
     return o;
 }
+
+int Fixed::getRawBits(void) const
+{
+    std::cout << "getRawBits member function called" << std::endl;
+    return _number;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    std::cout << "setRawBits member function called" << std::endl;
+    _number = raw;
+}
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;

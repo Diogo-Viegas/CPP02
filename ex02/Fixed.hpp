@@ -14,12 +14,12 @@ class Fixed
 
         Fixed& operator=(const Fixed& copy);
         //6 comparison operators
-        bool operator<(const Fixed& comp);
-        bool operator>(const Fixed& comp);
-        bool operator>=(const Fixed& comp);
-        bool operator<=(const Fixed& comp);
-        bool operator==(const Fixed& comp);
-        bool operator!=(const Fixed& comp);
+        bool operator<(const Fixed& comp) const;
+        bool operator>(const Fixed& comp) const;
+        bool operator>=(const Fixed& comp) const;
+        bool operator<=(const Fixed& comp) const;
+        bool operator==(const Fixed& comp) const;
+        bool operator!=(const Fixed& comp) const;
         //4 arithmetic operators
         Fixed operator+(Fixed const &obj) const;
         Fixed operator-(Fixed const &obj) const;
@@ -37,6 +37,9 @@ class Fixed
         Fixed operator--(int);
         //conversion
         float toFloat(void) const;
+        //getters and setters
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
         //destructor
         ~Fixed();
 };
